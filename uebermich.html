@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/site.css">
+<title>Malerei</title>
+</head>
+<body>
+  <div class="container" onclick="toggleMenu(this)">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+  </div>
+  <div class="menu">
+    <a href="Index.html">Startseite</a>
+    <a href="uebermich.html">Über mich</a>
+    <a href="Echo_Zeit.html">Echo's der Zeit</a>
+    <a href="Material.html">Material</a>
+    <a href="maps.html">Standort</a>
+    <a href="Kontaktformular.html">Kontaktformular</a>
+  </div>      
+
+<h1>Malerei Schallala</h1>
+<h2>Meine Leidenschaft ist zugleich auch mein Hobbie</h2>
+<h3>Qualitätsbewusstes Arbeiten, professionelle Beratung und eine breite Palette an hochwertigen Produkten sind die Eckpfeiler meiner Dienstleistungen</h3>
+<img src= "img/Rolle.png" alt="Rolle" style="display: block; margin: 20px auto; width: 600px; height: 500px;">
+<div class="textbox_d">Ich wähle stets Produkte aus, die ich voll und ganz unterstützen kann. Mir ist es ein Anliegen, dass die Farben, die ich verwende, sich harmonisch in die jeweiligen Räume und Gegebenheiten einfügen. Zudem lege ich großen Wert darauf, die individuellen Wünsche meiner Kunden und Kundinnen zu berücksichtigen und sie mit meinem besten Wissen und Gewissen zu beraten.</div>
+<div class="textbox_d">Selbständige Malerin seit Abschluss meiner Lehre vor über 20 Jahren, lebe ich meine Leidenschaft weiterhin für diesen Beruf, der mir stets neue Entdeckungen ermöglicht und von meinen vielfältigen Erfahrungen profitieren lässt. Im Laufe der Zeit habe ich mich kontinuierlich weitergebildet, wobei meine neueste Qualifikation in Valpaint liegt. Diese ermöglicht es mir, aus den gewohnten Strukturen auszubrechen und meine kreative Seite auszuleben.</div>
+<img src="img/AS.jpg" alt="Malerin" style="display: block; margin: 20px auto; width: 400px; height: 500px;">
+<div class="textbox_d">Hier habe ich nach der Arbeit ein verdientes Bier bekommen, Decke verklebt mit Isolationsmatten, ein Netz übergezogen, anschliessend Verputzt, und zu guter letzt meinen eigentlichen Job gemacht und das ganze noch in einem schönen warmen Weiss gestrichen</div>
+
+
+<div class="flex-container">
+  <a href="Index.html">Startseite</a>
+  <a href="Echo_Zeit.html">Echo's der Zeit</a>
+  <a href="Material.html">Material</a>
+  <a href="Kontaktformular.html">Kontaktformular</a>
+  <a href="maps.html">Standort</a>
+</div>
+<script>
+  function toggleMenu(container) {
+    container.classList.toggle('change');
+    var menu = document.querySelector('.menu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  }
+  </script>
+
+<footer class="footer">
+        <a href="Impressum.html" style="color: #ddd9d9;">Impressum</a>
+        <a href="AGB.html" style="color: #ddd9d9;">AGB</a>
+        <a href="Datenschutz.html" style="color: #ddd9d9;">Datenschutz</a>
+        <div> © Jacqueline 2024 <br> Alle Rechte vorbehalten</div>
+  </footer>
+  
+</body>
+</html>

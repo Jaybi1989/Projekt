@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie-Banner</title>
+    <style>
+        .cookie-banner {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            background-color: #343434;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #afadad;
+            box-sizing: border-box; 
+            z-index: 1000;
+        }
+
+        .cookie-options {
+            display: inline-block;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .cookie-banner button {
+            background-color: #445970;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .cookie-banner button:hover {
+            background-color: #1d3146;
+        }
+    </style>
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            const name = cname + "=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.startsWith(name)) {
+                    return c.substring(name.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            const userChoice = getCookie("CookieChoice");
+            if (userChoice === "") {
+                document.getElementById("cookie-banner").style.display = "block";
+            }
+        }
+
+        function acceptCookies(option) {
+            setCookie("CookieChoice", option, 30);
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-options">
+            <input type="radio" id="essential" name="cookie-choice" value="Essentielle">
+            <label for="essential">Essentielle</label>
+        </div>
+        <div class="cookie-options">
+            <input type="radio" id="necessary" name="cookie-choice" value="Nur notwendige">
+            <label for="necessary">Nur Notwendige</label>
+        </div>
+        <div class="cookie-options">
+            <input type="radio" id="marketing" name="cookie-choice" value="Marketing">
+            <label for="marketing">Marketing</label>
+        </div>
+        <button onclick="acceptCookies(document.querySelector('input[name=cookie-choice]:checked').value)">OK</button>
+    </div>
+</body>
+</html>

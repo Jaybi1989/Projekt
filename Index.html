@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/site.css">
+<title>Startseite</title>
+<script>
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function getCookie(cname) {
+        const name = cname + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i].trim();
+            if (c.startsWith(name)) {
+                return c.substring(name.length);
+            }
+        }
+        return "";
+    }
+    function checkCookie() {
+        const userChoice = getCookie("CookieChoice");
+        if (userChoice === "") {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
+    }
+    function acceptCookies(option) {
+        setCookie("CookieChoice", option, 30);
+        document.getElementById("cookie-banner").style.display = "none";
+    }
+</script>
+</head>
+<body onload="checkCookie()">
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-options">
+            <input type="radio" id="essential" name="cookie-choice" value="Essentielle">
+            <label for="essential">Essentielle</label>
+        </div>
+        <div class="cookie-options">
+            <input type="radio" id="necessary" name="cookie-choice" value="Nur notwendige">
+            <label for="necessary">Nur notwendige</label>
+        </div>
+        <div class="cookie-options">
+            <input type="radio" id="marketing" name="cookie-choice" value="Marketing">
+            <label for="marketing">Marketing</label>
+        </div>
+        <button onclick="acceptCookies(document.querySelector('input[name=cookie-choice]:checked').value)">OK</button>
+    </div>
+    <div class="container" onclick="toggleMenu(this)">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+      <div class="menu">
+        <a href="Index.html">Startseite</a>
+        <a href="uebermich.html">Über mich</a>
+        <a href="Echo_Zeit.html">Echo's der Zeit</a>
+        <a href="Material.html">Material</a>
+        <a href="maps.html">Standort</a>
+        <a href="Kontaktformular.html">Kontaktformular</a>
+      </div>      
+    <h1>Wilkommen auf meiner Website</h1>
+<h2>Ich male dir die Welt, wie sie dir gefällt</h2><br>
+<br>
+<div class="image_container">
+<img src="img/Evolution.jpg" alt="Leiter" style="display: block; margin: 20px auto; width: 500px; height: 300px;">
+</div>
+<br><br>
+<div class="textbox_a">
+    Ich werde dir nun ein paar meiner Projekte und möglichen Angeboten aufzeigen. Valpaint eignet sich sehr wenn du etwas spezielles suchst, eine Wand im Schlafzimmer hinter dem Bett mit Schwarz, Gold, 
+    Kupfer und Silber eignen sich um ein edles und trotzdem noch schlichtes Konzept zu bekommen. Für die Projekte kannst du auf Echo's der Zeit klicken.
+</div>
+<br><br>
+<div class="textbox_a">
+    Möchtest du lieber eine Mineralische Farbe und erreichen das nicht nur du sondern auch dein Haus durchatmen können, auch das mache ich.
+</div>
+<br><br>
+<div class="textbox_a">
+    Hast du ein Haus dass immer wieder durchdrückt, hier kann ich Dispersionsfarbe empfehlen
+</div>
+<br><br>
+<div class="textbox_a">
+    Ob du nun für drinnen oder draussen am schauen bist, ich kann dir sehr vieles Anbieten und bei meinen Lieferanten wie zum Beispiel dem Colorama, Knuchel oder dem den es dan braucht deine Wünsche erfüllen.
+</div>
+<br><br>
+<div class="textbox_a">
+    Hast du gewisse Vorstellungen und suchst nach einem ganzheitlichen Konzept für dein Haus, ich berate dich gerne. Du kannst mich anrufen oder du füllst das Kontaktformular mit deinen Wunschterminen aus.  
+</div>
+<br><br>
+<div class="textbox_a">individuelle Beratung via Kontaktformular einen Termin vorschlagen
+</div> 
+<br><br>
+<div class="flex-container">
+    <a href="uebermich.html">Über mich</a>
+    <a href="Echo_Zeit.html">Echo's der Zeit</a>
+    <a href="Material.html">Material</a>
+    <a href="maps.html">Standort</a>
+    <a href="Kontaktformular.html">Kontaktformular</a>
+</div>
+<br>
+<script>
+    function toggleMenu(container) {
+      container.classList.toggle('change');
+      var menu = document.querySelector('.menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+<footer class="footer">
+            <a href="Impressum.html" style="color: #ddd9d9;">Impressum</a>
+            <a href="AGB.html" style="color: #ddd9d9;">AGB</a>
+            <a href="Datenschutz.html" style="color: #ddd9d9;">Datenschutz</a>
+    <div> © Jacqueline 2024 <br> Alle Rechte vorbehalten</div>
+</footer>
+</body>
+</html>

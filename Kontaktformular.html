@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktformular</title>
+    <link rel="stylesheet" href="css/formular.css">
+    
+</head>
+<body>
+    <h1>Kontaktformular</h1>
+    <div class="container">
+        <form onsubmit="showThankYouMessage(); return false;">
+            <label for="lastname">Nachname:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Dein Nachname.." required>
+
+            <label for="firstname">Vorname:</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Dein Vorname.." required>
+
+            <label for="adress">Adresse:</label>
+            <input type="text" id="adress" name="address" placeholder="Deine Adresse.." required>
+
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Deine Telefonnummer.." required>
+
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Deine Email.." required>
+
+            <div class="newsletter-box">
+                <label for="subscribe">Newsletter abonnieren?</label>
+                <input type="checkbox" id="subscribe" name="subscribe">
+            
+                <label for="newsletter_email">Geben Sie Ihre E-Mail-Adresse an:</label>
+                <input type="email" id="newsletter_email" name="newsletter_email" placeholder="Deine E-Mail-Adresse.." required>
+            
+                <input type="submit" value="Abonnieren">
+            </div>
+            
+
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" placeholder="Deine Nachricht.." style="height:150px" required></textarea>
+            
+            <input type="submit" value="Absenden">
+        </form>
+        <div class="thank-you-message" id="thank-you-message">Vielen Dank für Ihre Nachricht, ich werde Sie schnellstmöglich Kontaktieren</div>
+            <label for="avatar">Hier können Sie Ihre Bilder hochladen:</label>
+            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+    </div>
+    
+    <script>
+        function showThankYouMessage() {
+            document.getElementById("thank-you-message").style.display = "block";
+        }
+    </script>
+<br><br>
+<div class="flex-container">
+    <a href="Index.html">Startseite</a>
+    <a href="uebermich.html">Über mich</a>
+    <a href="Echo_Zeit.html">Echo's der Zeit</a>
+    <a href="Material.html">Material</a>
+    <a href="maps.html">Standort</a>
+    </div><br>
+<footer class="footer">
+    <a href="Impressum.html" style="color: #ddd9d9;">Impressum</a>
+    <a href="AGB.html" style="color: #ddd9d9;">AGB</a>
+    <a href="Datenschutz.html" style="color: #ddd9d9;">Datenschutz</a>
+    <div>© Jacqueline 2024 <br> Alle Rechte vorbehalten</div>
+</footer>   
+</body>
+</html>
